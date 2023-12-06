@@ -5,4 +5,5 @@ globalThis.ngJest = {
     errorOnUnknownProperties: true,
   },
 };
+// eslint-disable-next-line import/no-extraneous-dependencies
 import 'jest-preset-angular/setup-jest';

@@ -11,7 +11,7 @@ export const createAngularSSR = async (
   originalUrl: string
 ) => {
   const protocol: string = isHttps ? 'https' : 'http';
- 
+
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');
   const indexHtml = join(serverDistFolder, 'index.server.html');
