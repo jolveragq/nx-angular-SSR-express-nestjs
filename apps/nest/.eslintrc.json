@@ -1,0 +1,150 @@
+{
+  "extends": ["../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts","*.mts"],
+      "parserOptions": {
+        "project": "./tsconfig.*?.json"
+      },
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "eslint:recommended",
+        "airbnb-typescript/base",
+        "plugin:import/typescript",
+        "plugin:prettier/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/recommended"
+      ],
+      "plugins": [
+        "unused-imports",
+        "import"
+      ],
+      "rules": {
+        "unused-imports/no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars-experimental": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          {
+            "args": "after-used",
+            "argsIgnorePattern": "^_",
+            "ignoreRestSiblings": false,
+            "vars": "local",
+            "varsIgnorePattern": "^_"
+          }
+        ],
+        "unused-imports/no-unused-imports": "error",
+        "import/no-unresolved": "off",
+        "import/prefer-default-export": "off",
+        "import/no-restricted-paths": "off",
+        "import/no-absolute-path": "error",
+        "import/no-useless-path-segments": "error",
+        "class-methods-use-this": "off",
+        "no-trailing-spaces": "error",
+        "no-magic-numbers": [
+          "warn",
+          {
+            "ignoreArrayIndexes": true,
+            "ignoreDefaultValues": true,
+            "ignoreClassFieldInitialValues": true
+          }
+        ],
+        "no-debugger": "warn",
+        "no-alert": "warn",
+        "no-console": [
+          "warn",
+          {
+            "allow": [
+              "error",
+              "info"
+            ]
+          }
+        ],
+        "no-empty-function": "off",
+        "@typescript-eslint/no-empty-function": [
+          "error",
+          {
+            "allow": [
+              "arrowFunctions"
+            ]
+          }
+        ],
+        "no-var": "error",
+        "prefer-const": "error",
+        "max-lines": [
+          "error",
+          500
+        ],
+        "max-len": [
+          "error",
+          80,
+          2,
+          {
+            "ignoreUrls": true,
+            "ignoreComments": true,
+            "ignoreRegExpLiterals": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true
+          }
+        ],
+        "lines-between-class-members": "off",
+        "comma-spacing": [
+          "error",
+          {
+            "before": false,
+            "after": true
+          }
+        ],
+        "array-element-newline": [
+          "error",
+          "consistent"
+        ],
+        "array-bracket-spacing": [
+          "error",
+          "never"
+        ],
+        "padded-blocks": [
+          "error",
+          {
+            "blocks": "never",
+            "classes": "never",
+            "switches": "never"
+          },
+          {
+            "allowSingleLineBlocks": true
+          }
+        ],
+        "no-multiple-empty-lines": "error",
+        "@typescript-eslint/lines-between-class-members": [
+          "error",
+          "always",
+          {
+            "exceptAfterOverload": false
+          }
+        ],
+        "no-useless-constructor": "off",
+        "@typescript-eslint/no-useless-constructor": "off",
+        "@typescript-eslint/explicit-member-accessibility": [
+          "error",
+          {
+            "accessibility": "explicit",
+            "overrides": {
+              "accessors": "off",
+              "constructors": "no-public",
+              "methods": "explicit",
+              "properties": "explicit",
+              "parameterProperties": "explicit"
+            }
+          }
+        ],
+        "@typescript-eslint/unbound-method": [
+          "error",
+          {
+            "ignoreStatic": true
+          }
+        ]
+      }
+    }
+  ]
+}

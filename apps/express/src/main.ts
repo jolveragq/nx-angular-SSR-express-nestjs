@@ -7,7 +7,7 @@ const defaultPort = 3333;
 const port = process.env.PORT || defaultPort;
 app.use('/assets', express.static(path.join(import.meta.url, 'assets')));
 app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to backend!' });
+  res.send({ message: 'Welcome to express!' });
 });
 const serverDistFolder = path.dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = path.resolve(
